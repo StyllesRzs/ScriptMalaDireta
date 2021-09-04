@@ -38,7 +38,7 @@ for i in range(1, registro_contagem + 1):
     mala_direta.Execute(False)
 
     #Pegando o valor guardado
-    nome_base = mala_direta.DataSource.DataFields('Nome da primeira Coluna raiz'.replace(' ', '_')).Value  #Nome da coluna PrimaryKey
+    nome_base = mala_direta.DataSource.DataFields('Nome da primeira Coluna raiz'.replace(' ', '_')).Value  #Nome da coluna PrimaryKey por exemplo: A partir da coluna nome
     
     docAlvo = wordApp.ActiveDocument
 

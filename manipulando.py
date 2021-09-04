@@ -16,7 +16,7 @@ wordApp.Visible = True
 """ 
 Abrindo Template Word + Abrindo Página do Excel
  """
-docRaiz = wordApp.Documents.Open(os.path.join(dirCentral, "NOME DO DOCUMENTO.docx"))
+docRaiz = wordApp.Documents.Open(os.path.join(dirCentral, "NOME DO DOCUMENTO.docx")) #Nome do docx
 #print(type(docRaiz))
 mala_direta = docRaiz.MailMerge
 mala_direta.OpenDataSource(
@@ -38,7 +38,7 @@ for i in range(1, registro_contagem + 1):
     mala_direta.Execute(False)
 
     #Pegando o valor guardado
-    nome_base = mala_direta.DataSource.DataFields('Informe seu nome'.replace(' ', '_')).Value
+    nome_base = mala_direta.DataSource.DataFields('Nome da primeira Coluna raiz'.replace(' ', '_')).Value  #Nome da coluna PrimaryKey
     
     docAlvo = wordApp.ActiveDocument
 

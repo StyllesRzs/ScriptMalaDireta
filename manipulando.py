@@ -2,7 +2,7 @@ import os
 import win32com.client as win32 # pip install pywin32
 
 dirCentral = os.getcwd()
-nome_excel = "Planejamentos02.xlsx" #nome do excel que vc quer pegar
+nome_excel = "Nome do excel.xlsx" #nome do excel que vc quer pegar
 pasta_destino = os.path.join(dirCentral, "PlanejamentoSeparados") #localização da pasta que irá guardar o word
 #print(pasta_destino)
 
@@ -14,14 +14,14 @@ wordApp = win32.Dispatch("Word.application")
 wordApp.Visible = True
 
 """ 
-Abrindo Template Word + Abrindo PLANEJAMENTO FINANCEIRO
+Abrindo Template Word + Abrindo Página do Excel
  """
-docRaiz = wordApp.Documents.Open(os.path.join(dirCentral, "Planejamento_Financeiro.docx"))
+docRaiz = wordApp.Documents.Open(os.path.join(dirCentral, "NOME DO DOCUMENTO.docx"))
 #print(type(docRaiz))
 mala_direta = docRaiz.MailMerge
 mala_direta.OpenDataSource(
     Name:=os.path.join(dirCentral, nome_excel),
-    sqlstatement:="SELECT * FROM [PLANEJAMENTO FINANCEIRO$]"  # Select no nome da célula central
+    sqlstatement:="SELECT * FROM [NOME DA Página do EXCEL$]"  # Select no nome da página do excel
 ) 
 
 registro_contagem = mala_direta.DataSource.RecordCount
